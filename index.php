@@ -35,7 +35,7 @@ function ProcessWireBootConfig() {
 	 * Define installation paths and urls
 	 *
 	 */
-	$rootPath = dirname(__FILE__);
+	$rootPath = dirname($_SERVER['SCRIPT_FILENAME']); // <- Support symbolic linking of index.php dirname(__FILE__);
 	if(DIRECTORY_SEPARATOR != '/') $rootPath = str_replace(DIRECTORY_SEPARATOR, '/', $rootPath); 
 
 	if(isset($_SERVER['HTTP_HOST'])) {
